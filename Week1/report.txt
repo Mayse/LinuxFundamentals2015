@@ -1,0 +1,19 @@
+mkdir
+
+alias ls=ls
+alias manc="man --html=chromium-browser"
+
+ssh-keygen -y .ssh/id_dsa
+ja tulokset authorized_keyssiin
+ssh melkki.cs.helsinki.fi ssh ukko185.hpc.cs.helsinki.fi
+
+ssh blahbalah ls
+
+ukko doesn't allow connections except through melkki and melkki dislikes ssh-add: "Could not open a connection to your authentication agent."
+
+eval "$(ssh-agent)"
+ssh ukko185.hpc.cs.helsinki.fi
+
+
+#!/bin/bash
+echo "rsync --archive /home/fs/tkt_cam/public_html/`date +%m`/`date +%d` ~/LinuxFundamentals/Week1/`date +%d.%Y.%m.%d`"

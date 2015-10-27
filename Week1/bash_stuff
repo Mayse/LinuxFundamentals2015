@@ -1,0 +1,15 @@
+miikasay@da5-cs-b221-22:~$ cat .bash
+.bash_aliases  .bash_history  .bash_profile  .bashrc        
+miikasay@da5-cs-b221-22:~$ cat .bash_aliases 
+alias manh="man --html=chromium-browser"
+alias ls='ls --color=auto'
+alias o='ls -latr'
+alias i='ssh miikas@83.150.83.116'
+alias iiärcee='ssh -t miikas@83.150.83.116 screen -rUd'
+miikasay@da5-cs-b221-22:~$ cat .bashrc 
+if [ -f ~/.bash_aliases ]; then
+. ~/.bash_aliases
+fi
+miikasay@da5-cs-b221-22:~$ cat .bash_profile 
+miikasay@da5-cs-b221-22:~$ 
+

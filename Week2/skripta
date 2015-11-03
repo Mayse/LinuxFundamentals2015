@@ -1,0 +1,7 @@
+shvar="expr 2 + 4"
+echo $shvar
+echo "$shvar"
+echo '$shvar'
+echo \$shvar
+echo ´$shvar´
+echo `$shvar`

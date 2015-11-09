@@ -12,3 +12,12 @@ ls ~ | grep 'e' | wc -l
 Create a bash script count-homedir.sh which counts the number of files in your home directory. Verify that it works. Attach the script contents to your report:
 #!/bin/bash
 ls -a --format=single-column ~ | grep --colour '^\.' | wc -l
+
+5
+$BASH_VERSION 
+4.3.11(1)-release
+$PWD 
+working directiry
+$OLDPWD
+working directory before last cd command
+

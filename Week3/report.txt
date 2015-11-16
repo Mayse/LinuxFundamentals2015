@@ -1,0 +1,7 @@
+Uncompressed
+find -name "*.sh" | tar cf /Week3/script-archive.tar -T -
+
+Compressed archives:
+find -name "*.sh" | tar cjf Week3/script-archive.tar.bz2 -T -
+find -name "*.sh" | tar czf Week3/script-archive.tar.gz -T -
+

@@ -1,0 +1,4 @@
+set terminal dumb
+set yrange [0:50]
+set datafile separator ";"
+plot "tempdata.csv" using 1:2

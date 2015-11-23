@@ -1,6 +1,7 @@
 #!/bin/bash
 date=0
 max=0
+min=100
 
 while read line           
 do          
@@ -17,8 +18,9 @@ do
 
 	#if day has changed do a print and update variables for next day
 	if [ $(echo $date) != $(echo $thisdate) ]; then
-		echo "$date $max"
+		echo "$date $max $min"
 		max=0
+		min=100
 		date=$(echo $thisdate)
 	fi
 
@@ -27,7 +29,12 @@ do
 		 max=$(echo $thistemp)
 				            fi
 
+	if [ $(echo $thistemp) -lt $(echo $min) ]; then
+		 min=$(echo $thistemp)
+				            fi
+
+
     done <tempdatastripped
 
     #print final days line
-    echo "$date $max"
+    echo "$date $max $min"

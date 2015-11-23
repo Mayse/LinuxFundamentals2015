@@ -1,0 +1,14 @@
+ex1
+long-cat.sh
+helpful message? vaikea parsia
+
+ex2
+create-random-data.sh
+random-data.txt
+gnuplot random-data-gnuplot
+
+ex3
+make-november-max-temps.sh
+make-november-max-min-temperatures.sh
+
+

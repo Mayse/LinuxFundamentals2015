@@ -1,0 +1,10 @@
+set ylabel 'Temperature'
+set xlabel "Time (dd.mm)"
+set timefmt "%Y.%m.%d %H:%M"
+set format x "%d.%m."
+set xdata time
+set key left
+set terminal postscript eps colour enhanced
+set output "temperatures.eps"
+set title "Maximum temperatures"
+plot "tempdataready" using 1:2 title 'Max temp' with linespoints

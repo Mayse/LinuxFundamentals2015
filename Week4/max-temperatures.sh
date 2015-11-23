@@ -9,7 +9,18 @@ do
 	thistemp=$(echo $line | cut -d ' ' -f 2)
 
 	#if at first line set date to that
-	if [ $(echo $date) = 0 ]; then
+	if [ $(echo $date) == 0 ]; then
+		echo "first line"
+		echo "date was $date and will be $thisdate"
+		date=$(echo $thisdate)
+		echo "date is now $date"
+	fi
+
+	#if day has changed do a print and update variables for next day
+	if [ $(echo $date) != $(echo $thisdate) ]; then
+		echo "$date $max $min"
+		max=0
+		min=100
 		date=$(echo $thisdate)
 	fi
 
@@ -25,5 +36,5 @@ do
 
     done <tempdatastripped
 
-    echo $max
-    echo $min
+    #print final days line
+    echo "$date $max $min"

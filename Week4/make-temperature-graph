@@ -1,0 +1,2 @@
+#!/bin/bash
+./get-temps.sh $1  > tempdatastripped && ./max-min-temperatures.sh > tempdataready && gnuplot max-min-temps-general-gnuplot && mv temperatures.eps newtemperature.eps

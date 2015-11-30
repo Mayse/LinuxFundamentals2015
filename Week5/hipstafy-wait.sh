@@ -1,10 +1,7 @@
 #!/bin/bash
-inotifywait -m -e CREATE -e MOVED_TO hipstafy-dropbox 2> /dev/null | while read line;
+inotifywait -m -e CREATE -e MOVED_TO hipstafy-dropbox 2> log.err | while read line;
 do
 filename=$(echo $line|cut -d ' ' -f 3)
-directory=$(echo $line|cut -d ' ' -f 1)
-#echo $filename
-#echo $directory
-mv $directory$filename $directory/hipstafied
+mv hipstafy-dropbox/$filename hipstafy-dropbox/hipstafied
 ./hipstafy.sh hipstafy-dropbox/hipstafied/$filename
 done

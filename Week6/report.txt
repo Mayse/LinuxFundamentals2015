@@ -1,0 +1,4 @@
+Hipstafies and uploads file:
+edit hipstafy.sh and put your Client ID in the right place, then run
+imgurify.sh <URL>
+and it will automatically download, hipstafy and upload the image to imgur

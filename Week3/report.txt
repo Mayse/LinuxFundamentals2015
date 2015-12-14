@@ -1,7 +1,18 @@
+ex1
 Uncompressed
 find -name "*.sh" | tar cf /Week3/script-archive.tar -T -
 
 Compressed archives:
 find -name "*.sh" | tar cjf Week3/script-archive.tar.bz2 -T -
 find -name "*.sh" | tar czf Week3/script-archive.tar.gz -T -
+
+Pipeline that bypasses tar options
+tar cf - <(find . -name "*.sh")| gzip - >script-archive-pipelined.tar.gz
+tar cf - <(find . -name "*.sh")| bzip2 - >script-archive-pipelined.tar.bz2
+
+ex2
+Not really going to bother with filesystems, macbook air seems to just have one hfs device so I'll use that. Week4 and 5 used ukko when applicable.
+pipe download to extraction
+curl -s "https://wiki.helsinki.fi/download/attachments/124126879/lost24-monitor-temps-and-fans-v2.tar.bz2?version=1&modificationDate=1383226184357&api=v2" | tar xj
+
 

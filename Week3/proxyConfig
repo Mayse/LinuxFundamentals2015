@@ -1,4 +1,4 @@
 Host ukko032
-  User          miikasay
+  User          miikasay@cs
   HostName      ukko032@hpc.cs.helsinki.fi
   ProxyCommand  ssh miikasay@melkki.cs.helsinki.fi nc %h %p 2> /dev/null

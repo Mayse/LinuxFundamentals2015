@@ -15,4 +15,43 @@ Not really going to bother with filesystems, macbook air seems to just have one 
 pipe download to extraction
 curl -s "https://wiki.helsinki.fi/download/attachments/124126879/lost24-monitor-temps-and-fans-v2.tar.bz2?version=1&modificationDate=1383226184357&api=v2" | tar xj
 
+the proxyconfig just isn't going to go anywhere
+Mayses-MacBook-Air:Week3 miikas$ ssh -F proxyConfig ukko124 "ls"
+ssh: Could not resolve hostname ukko124: nodename nor servname provided, or not known
+Mayses-MacBook-Air:Week3 miikas$ vim proxyConfig 
+Mayses-MacBook-Air:Week3 miikas$ ssh -F proxyConfig ukko032 "ls"
+miikasay@melkki.cs.helsinki.fi's password: 
+ssh_exchange_identification: Connection closed by remote host
+Mayses-MacBook-Air:Week3 miikas$ vim proxyConfig 
+Mayses-MacBook-Air:Week3 miikas$ ssh -F proxyConfig ukko032 "ls"
+miikasay@melkki.cs.helsinki.fi's password: 
+ssh_exchange_identification: Connection closed by remote host
 
+So yeah... no go.
+
+ex3
+find ../lost24/monitor/2011.11.24/ -name "hp-temps.txt" -exec cat {} + | grep "PROCESSOR_ZONE" | cut -c 32-34 | uniq | sort
+output is in 2011.11.24.temps
+making csv like files:
+find ../lost24/monitor/2011.11.24/ -name "hp-temps.txt" -exec cat {} + | grep "PROCESSOR_ZONE" | sed -n 's/  */;/gp' | sed -f csv-transform-rules.sed
+output is in temps.csv
+
+ex4
+Mayses-MacBook-Air:monitor miikas$ ls */*/hp-temps.txt
+-bash: /bin/ls: Argument list too long
+
+find ../lost24/monitor/2011.11.* -name "hp-temps.txt"
+output is in found.txt
+
+find ../lost24/monitor/* -name '*txt'
+results in proper output
+
+find ../lost24/monitor/* -name *txt
+craps out the expansion to try and give stuff from current directory to find (contains the two .txt files)
+find: footest.txt: unknown primary or operator
+
+ex5
+result in hipstafy.sh
+
+ex6
+hottest-day.sh (oh my god it's so slow!)
